@@ -1,8 +1,7 @@
 import React from "react";
 import { IonPage, IonText } from "@ionic/react";
 import styled from "styled-components";
-import Login from "../components/Login/Login";
-import Login1 from "../components/Login/Login1";
+import Login1 from "../components/Login/Login";
 
 const Logo = styled(IonText)`
   font-size: 1.35rem;

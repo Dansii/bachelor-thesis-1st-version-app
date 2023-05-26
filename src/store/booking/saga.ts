@@ -130,14 +130,12 @@ function* bookGroupEventSaga({ payload }: any): Generator {
 function* loadSelectedBookingSaga({ payload }: any): Generator {
   try {
     const { eventId } = payload;
-    console.log(eventId);
     setAuthUserToken();
     const response = (yield call(
       $api.get,
       `/activity/${COMPANY_ID}/${eventId}`
     )) as AxiosResponse;
     const groupEvent = extractEventFromResponse(response);
-    console.log(groupEvent);
     yield put({
       type: LOAD_SELECTED_BOOKING_SUCCESS,
       payload: { selectedBooking: groupEvent },

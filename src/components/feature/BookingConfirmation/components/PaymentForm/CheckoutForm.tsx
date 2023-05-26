@@ -21,8 +21,6 @@ const CheckoutForm = () => {
         return_url: "http://localhost:8100/",
       },
     });
-
-    console.log({ error });
   };
 
   return (

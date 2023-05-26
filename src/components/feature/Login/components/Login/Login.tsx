@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import InputField from "../../../../common/InputField/InputField";
 import Text from "../../../../common/Text/Text";
 import { StyledPrimaryButton } from "../../../../../styles/styles";
@@ -18,39 +20,73 @@ const StyledContainer = styled("div")`
 interface IProps {
   isSmsSent?: boolean;
 }
+
 const mapStateToProps = (state: RootState) => ({
   isSmsSent: state.auth.smsSent,
 });
 
-const Login = ({ isSmsSent }: IProps) => {
-  const [phone, setPhone] = useState<string>("");
+const phoneRegExp = /^\+?[1-9]\d{1,14}$/;
 
+const validationSchema = Yup.object().shape({
+  phone: Yup.string()
+    .matches(phoneRegExp, "Phone number is not valid")
+    .min(13)
+    .required(),
+});
+
+const Login = ({ isSmsSent }: IProps) => {
   const history = useHistory();
   const call = useAppDispatch();
 
-  const handleSignIn = () =>
+  const formik = useFormik({
+    initialValues: {
+      phone: "",
+    },
+    validationSchema,
+    onSubmit: (values) => {
+      call({
+        type: SEND_CODE_VERIFICATION,
+        payload: values,
+      });
+    },
+  });
+
+  const handleSubmit = () => {
     call({
       type: SEND_CODE_VERIFICATION,
-      payload: { phone },
+      payload: formik.values,
     });
+  };
 
   useEffect(() => {
-    isSmsSent && history.push("/verification");
+    if (isSmsSent) {
+      history.push("/verification");
+    }
   }, [isSmsSent]);
 
   return (
     <StyledContainer>
       <InputField
-        value={phone}
-        setValue={setPhone}
+        name="phone"
+        type="tel"
+        onChange={(e: any) => {
+          const event = {
+            target: {
+              name: "phone",
+              value: e.detail.value,
+            },
+          };
+          formik.setFieldValue("phone", e.detail.value);
+        }}
+        value={formik.values.phone}
         placeholder="+420 777 777 777"
         title="Phone"
+        errorText={formik.errors.phone}
       />
-      {phone?.length === 13 && (
+      {!formik.errors.phone && formik.values.phone && (
         <StyledPrimaryButton
           className="ion-margin-top ion-padding-horizontal"
-          type="submit"
-          onClick={handleSignIn}
+          onClick={handleSubmit}
         >
           <Text weight="bold" color="light">
             Login

@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Chip from "../../common/Chip/Chip";
 import {
-  arrowDown,
   chevronBackOutline,
   chevronForwardOutline,
 } from "ionicons/icons";
 import {
-  IonContent,
   IonHeader,
   IonIcon,
   IonLabel,
@@ -144,39 +142,4 @@ const CalendarHeader = ({ selectedDate, setSelectedDate }: IProps) => {
 };
 
 export default CalendarHeader;
-// const [currentWeek, setCurrentWeek] = useState<Date[]>([]);
-// const [selectedDayOfWeek, setSelectedDayOfWeek] = useState<
-//     string | undefined
-// >("");
 
-// function getStartOfWeek(date: Date) {
-//   const dayOfWeek = date.getDay() || 7; // Воскресенье имеет значение 0, поэтому используем 7 для правильного расчета
-//   const startOfWeek = new Date(date);
-//   startOfWeek.setDate(date.getDate() - dayOfWeek + 1);
-//   return startOfWeek;
-// }
-//
-// // Функция для создания массива дат текущей недели
-// function getCurrentWeek() {
-//   const today = new Date();
-//   const startOfWeek = getStartOfWeek(today);
-//   const week = [];
-//
-//   for (let i = 0; i < 7; i++) {
-//     const day = new Date(startOfWeek);
-//     day.setDate(startOfWeek.getDate() + i);
-//     week.push(day);
-//   }
-//
-//   return week;
-// }
-//
-// const handleDaySelection = (selectedDate: string | undefined) => {
-//   console.log(selectedDate);
-//   setSelectedDayOfWeek(selectedDate);
-// };
-//
-// useEffect(() => {
-//   setCurrentWeek(getCurrentWeek());
-// }, []);
-// // Используйте эту функцию для получения массива дат текущей недели

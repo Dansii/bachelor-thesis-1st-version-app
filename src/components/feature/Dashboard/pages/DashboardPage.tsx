@@ -63,7 +63,6 @@ const DashboardPage = ({
         slidesPerView={1.01}
         slidesPerGroup={1}
         grabCursor={true}
-        // autoplay={{ delay: 3000 }}
         navigation
         style={{ display: "flex", flexDirection: "row" }}
       >

@@ -21,7 +21,7 @@ export function parseDirectionsAndCount(input: string): {
   directions: string[];
   count: number;
 } {
-  const regex = /(.+)\s\(x(\d+)\)$/; // Регулярное выражение для разделения строк на направления и число
+  const regex = /(.+)\s\(x(\d+)\)$/;
   const match = input.match(regex);
 
   if (match) {

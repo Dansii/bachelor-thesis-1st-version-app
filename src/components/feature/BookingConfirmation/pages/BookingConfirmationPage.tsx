@@ -83,7 +83,6 @@ const BookingConfirmationPage = ({
       payload: { eventId: match.params.eventId },
     });
   }, []);
-  console.log(selectedBooking);
   return (
     <PageLayout
       Header={<CustomHeader backButton={true} title="Your booking" />}

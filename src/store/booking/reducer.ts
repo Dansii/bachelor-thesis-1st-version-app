@@ -65,7 +65,6 @@ const loginReducer = (state = initialState, { type, payload }: TAction) => {
       };
     case LOAD_SELECTED_BOOKING_SUCCESS:
       const { selectedBooking } = payload;
-      console.log(selectedBooking);
       return {
         ...state,
         selectedBooking: selectedBooking,

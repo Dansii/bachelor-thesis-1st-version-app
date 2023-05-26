@@ -26,6 +26,7 @@ const processPayment = async (event) => {
   return { success };
 };
 
+// eslint-disable-next-line no-undef
 handlePaymentStripe = (event) => {
   switch (event.type) {
     case "payment_intent.succeeded":
@@ -35,4 +36,5 @@ handlePaymentStripe = (event) => {
   }
 };
 
+// eslint-disable-next-line no-undef
 module.exports = handlePaymentStripe;

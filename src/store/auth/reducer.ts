@@ -52,7 +52,6 @@ const userReducer = (state = initialState, { type, payload }: TAction) => {
         newUser: true,
       };
     case SIGN_OUT_SUCCESS: {
-      console.log("HELLO");
       return {
         ...state,
         isAuthorized: false,
