@@ -1,0 +1,11 @@
+{
+	"appId": "com.latinaprague.app",
+	"appName": "Reservation system for dance school",
+	"webDir": "build",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"PushNotifications": {
+			"presentationOptions": ["badge", "sound", "alert"]
+		}
+	}
+}

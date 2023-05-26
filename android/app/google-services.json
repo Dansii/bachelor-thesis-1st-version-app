@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1029174168727",
+    "project_id": "latina-prague",
+    "storage_bucket": "latina-prague.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029174168727:android:f9748c571cd34fa841add2",
+        "android_client_info": {
+          "package_name": "com.latinaprague.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1029174168727-qvbn4p2pn13eiav9qkv87cnb9kdcedp7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXhHqYaWmHzparOVCSUSgS1EcYL2kmvww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1029174168727-qvbn4p2pn13eiav9qkv87cnb9kdcedp7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

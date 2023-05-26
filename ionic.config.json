@@ -1,0 +1,8 @@
+{
+  "name": "Reservation system for dance school",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "9ec9b3cd"
+}
